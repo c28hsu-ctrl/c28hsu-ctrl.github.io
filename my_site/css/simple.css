@@ -724,6 +724,7 @@ div.notice p:last-of-type {
 	margin-bottom: 0;
 }
 
+
 /* Print */
 @media print {
   @page {
