@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Journey Continues</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <section class="container">
+        <h1>The Journey Continues</h1>
+        <p>With the guardian's riddle behind you, the path forward splits into three. Each route is known to favor certain traits: strength, wisdom, or stealth. Choose your path wisely, as it will influence the challenges you face ahead.</p>
+        <!-- Your Form -->
+        <form id="pathForm" type="get" action="page6.html">
+        <label for="answer">Choose your path:</label><br />
+        <select id="pathChoice" name="pathChoice" required>
+            <option value="">--Please choose an option--</option>
+            <option value="strength">Path of strength</option>
+            <option value="wisdom">Path of wisdom</option>
+            <option value="stealth">Path of stealth</option>
+        </select>
+        <input type="submit" id="contuine" value="Contine on Your Journey" />
+        </form>
+        <p>Think carefully, for the correct answer will allow you passage.</p>
+        <p>Your choice will not only test your abilities but also reveal deeper truths about your character.</p>
+    </section>
+    <script>
+        const choice = document.getElementById("pathChoice");
+        const form = document.getElementById("pathForm");
+        choice.addEventListener("change", function () {
+        switch (choice.value) {
+            case "strength":
+                document.body.style.backgroundColor = "#f01a3a";
+                break;
+            case "wisdom":
+                document.body.style.backgroundColor = "#030ffc";
+                break;
+            case "stealth":
+                document.body.style.backgroundColor = "#7efc95";
+                break;
+            default:
+                document.body.style.backgroundColor = "#ffffff";
+        }
+    });
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (choice.value === "stealth") {
+            window.location.href = "page5b.html";
+        } else {
+        window.location.href = "page6.html";
+        }
+    });
+    </script>
+</body>
+</html>
