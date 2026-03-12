@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Generator</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 600px;
+            width: 100%;
+            gap: 4px;
+        }
+        .container div {
+            width: 80px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .even {
+            background-color: green;
+        }
+
+        .odd {
+            background-color: rgb(255, 225, 0);
+        }
+
+        .prime {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Number Generator</h1>
+        <div id="container" class="container"></div>
+
+
+
+
+        <script>
+            function isPrime(num) {
+                if (num <= 1) return false;
+                if (num === 2) return true;
+                for (let i = 2; i * i <= num; i++) {
+                    if (num % i === 0) return false;
+                }
+                return true;
+            }
+            let container = document.querySelector("#container");
+            for(let i = 0; i<=100; i++){
+                const num = document.createElement('div');
+                num.textContent = i;
+
+                if (isPrime(i)) {
+                    num.classList.add('prime');
+                } else if (i % 2 === 0) {
+                    num.classList.add('even');
+                } else {
+                    num.classList.add('odd');
+                }
+        
+                container.appendChild(num);
+                
+            }
+
+        </script>
+    </main>
+</body>
+</html>
